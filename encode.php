@@ -28,13 +28,14 @@ class DES {
 		return $str;
 	} 
 }
+class encode{
+	private $_renrenKey = 'oe7aZhnk';
+	private $_renrenIv = "t\x02n\x04h\x06a\x08";
+	public function encrypt($str) {
+		return DES::encrypt($str, $this->_renrenKey, $this->_renrenIv);
+	}
 
-private $_renrenKey = 'oe7aZhnk';
-private $_renrenIv = "t\x02n\x04h\x06a\x08";
-public function encrypt($str) {
-	return DES::encrypt($str, $this->_renrenKey, $this->_renrenIv);
-}
-
-public function decrypt($str) {
-	return DES::decrypt($str, $this->_renrenKey, $this->_renrenIv);
+	public function decrypt($str) {
+		return DES::decrypt($str, $this->_renrenKey, $this->_renrenIv);
+	}
 }
